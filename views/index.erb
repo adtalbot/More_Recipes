@@ -1,0 +1,19 @@
+<h1>Recipe Box</h1>
+
+<p>List of Categories:</p>
+
+<ul>
+
+<% @categories.each() do |category| %>
+  <li><a href="/category/<%= category.id() %>"><%= category.name() %></a></li>
+<% end %>
+</ul>
+
+<p>Add a Category</p>
+
+<form action="/category_add" method="post">
+  <div class="form-group">
+    <input name="name" id="name" type="text">
+  </div>
+  <button type="submit" class="btn btn-success">Submit</button>
+</form>
